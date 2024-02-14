@@ -10,11 +10,27 @@ import SwiftUI
 struct LandmarkList: View {
     @Environment(ModelData.self) var modelData
     @State private var showFavoritesOnly = true
+    @State private var filter = FilterCategory.all
+    
+    enum FilterCategory: String, CaseIterable, Identifiable {
+        case all = "All"
+        case lakes = "Lakes"
+        case rivers = "Rivers"
+        case mountains = "Mountains"
+        
+        var id:  FilterCategory { self }
+    }
     
     var filteredLandmarks: [Landmark] {
         modelData.landmarks.filter { landmark in
             (!showFavoritesOnly || landmark.isFavorite)
+            && (filter == .all || filter.rawValue == landmark.category.rawValue)
         }
+    }
+    
+    var title: String {
+        let title = filter == .all ? "Landmarks" : filter.rawValue
+        return showFavoritesOnly ? "Favorite \(title)" : title
     }
     
     var body: some View {
@@ -29,11 +45,18 @@ struct LandmarkList: View {
                 }
             }
             .animation(.default, value: filteredLandmarks)
-            .navigationTitle("Landmarks")
+            .navigationTitle(title)
             .frame(minWidth: 300)
             .toolbar {
                 ToolbarItem {
                     Menu {
+                        Picker("Category", selection: $filter) {
+                            ForEach(FilterCategory.allCases) { category in
+                                Text(category.rawValue).tag(category)
+                            }
+                        }
+                        .pickerStyle(.inline)
+                        
                         Toggle(isOn: $showFavoritesOnly) {
                             Text("Favorites only")
                         }
