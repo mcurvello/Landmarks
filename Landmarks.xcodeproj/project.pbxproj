@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F32394F2B7D1DBC0055C289 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32394E2B7D1DBC0055C289 /* NotificationView.swift */; };
 		7F3E09A32B6DB74E00781D74 /* LandmarksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E09A22B6DB74E00781D74 /* LandmarksApp.swift */; };
 		7F3E09A52B6DB74E00781D74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E09A42B6DB74E00781D74 /* ContentView.swift */; };
 		7F3E09A72B6DB75400781D74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E09A62B6DB75400781D74 /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F32394E2B7D1DBC0055C289 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		7F3E099F2B6DB74E00781D74 /* Landmarks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landmarks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F3E09A22B6DB74E00781D74 /* LandmarksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarksApp.swift; sourceTree = "<group>"; };
 		7F3E09A42B6DB74E00781D74 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				7FE7DC252B7BB01B00E96493 /* Assets.xcassets */,
 				7FA4C3962B7D0E0E0038B2CC /* LandmarkDetail.swift */,
 				7FE7DC272B7BB01B00E96493 /* Preview Content */,
+				7F32394E2B7D1DBC0055C289 /* NotificationView.swift */,
 			);
 			path = "WatchLandmarks Watch App";
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				7FA4C38B2B7D0D4E0038B2CC /* ModelData.swift in Sources */,
 				7FA4C38F2B7D0D4E0038B2CC /* Landmark.swift in Sources */,
 				7FA4C3972B7D0E0E0038B2CC /* LandmarkDetail.swift in Sources */,
+				7F32394F2B7D1DBC0055C289 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
