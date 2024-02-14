@@ -1,8 +1,8 @@
 //
 //  LandmarkList.swift
-//  Landmarks
+//  WatchLandmarks Watch App
 //
-//  Created by Marcio Curvello on 03/02/24.
+//  Created by Marcio Curvello on 14/02/24.
 //
 
 import SwiftUI
@@ -20,6 +20,10 @@ struct LandmarkList: View {
     var body: some View {
         NavigationSplitView {
             List {
+                Toggle(isOn: $showFavoritesOnly) {
+                    Text("Favorites only")
+                }
+                
                 ForEach(filteredLandmarks) { landmark in
                     NavigationLink {
                         LandmarkDetail(landmark: landmark)
@@ -30,18 +34,6 @@ struct LandmarkList: View {
             }
             .animation(.default, value: filteredLandmarks)
             .navigationTitle("Landmarks")
-            .frame(minWidth: 300)
-            .toolbar {
-                ToolbarItem {
-                    Menu {
-                        Toggle(isOn: $showFavoritesOnly) {
-                            Text("Favorites only")
-                        }
-                    } label: {
-                        Label("Filter", systemImage: "slider.horizontal.3")
-                    }
-                }
-            }
         } detail: {
             Text("Select a Landmark")
         }
@@ -52,3 +44,4 @@ struct LandmarkList: View {
     LandmarkList()
         .environment(ModelData())
 }
+
